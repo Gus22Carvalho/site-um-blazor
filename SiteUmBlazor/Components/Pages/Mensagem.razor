@@ -1,0 +1,26 @@
+@page "/mensagem"
+@rendermode InteractiveServer
+
+
+@code{
+    private string mensagem = "Bem-vindo ao desenvolvimento web com .NET 10!";
+
+    private bool visivel = false;
+    private void AlternarVisibilidade()
+    {
+        visivel = !visivel;
+    }
+}
+
+@if (visivel){
+    <p>@mensagem</p>
+    <button class="btn btn-primary" @onclick="AlternarVisibilidade">
+        Ocultar mensagem
+    </button>
+}
+else {
+    <button class="btn btn-primary" @onclick="AlternarVisibilidade">
+         Exibir mensagem
+    </button>
+}
+

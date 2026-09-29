@@ -1,0 +1,46 @@
+@page "/placar-simples"
+@rendermode InteractiveServer
+
+<div style="text-align: center; margin-top: 50px;">
+    <h2>Placar do Jogo</h2>
+
+    <div style="margin: 20px 0;">
+        <span>@pontos</span>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button class="btn btn-primary" @onclick="SomarPonto">
+            Somar 1 Ponto
+        </button>
+
+        <button class="btn btn-primary" @onclick="SubtrairPonto">
+            Subtrair 1 Ponto
+        </button>
+
+        <button class="btn btn-primary" @onclick="ZerarPlacar">
+            Zerar Placar
+        </button>
+    </div>
+</div>
+
+@code {
+    private int pontos = 0;
+
+    private void SomarPonto()
+    {
+        pontos++;
+    }
+
+    private void SubtrairPonto()
+    {
+        if (pontos > 0)
+        {
+            pontos--;
+        }
+    }
+
+    private void ZerarPlacar()
+    {
+        pontos = 0;
+    }
+}
